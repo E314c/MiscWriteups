@@ -1,0 +1,3 @@
+# OH NOES, I@VE PUT PRIVATE KEYS ON THE INTERWEBZ AND SOMEONE WILL FIND THEM THROUGH GOOGLE DORKING
+
+Yeh, these aren't _really_ that private. Anyone can find them by playing [OverTheWire:Bandit](http://overthewire.org/wargames/bandit/). That's kind of them point in them...
